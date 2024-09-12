@@ -25,6 +25,9 @@ height = 3.4;
 console.log(my_name);
 console.log(height);
 
+//concatinating in JS
+console.log(my_name, "=", height)
+
 
 //#2 let
 let area = 90.5;
