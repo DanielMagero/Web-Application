@@ -36,6 +36,9 @@ let f_name;
 
 f_name = "Daniel";
 
+console.log("Area: ", area)
+console.log("First Name: ", f_name)
+
 //comst
 const pie = 3.14
 
