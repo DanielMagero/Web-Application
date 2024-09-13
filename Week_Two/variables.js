@@ -26,7 +26,7 @@ console.log(my_name);
 console.log(height);
 
 //concatinating in JS
-console.log(my_name, "=", height)
+console.log(my_name, "=", height);
 
 
 //#2 let
@@ -36,11 +36,11 @@ let f_name;
 
 f_name = "Daniel";
 
-console.log("Area: ", area)
-console.log("First Name: ", f_name)
+console.log("Area: ", area);
+console.log("First Name: ", f_name);
 
 //comst
-const pie = 3.14
+const pie = 3.14;
 
 //can't declare a constant, it must be initialized
 //const  k;
