@@ -25,3 +25,15 @@ for (let i = 1; i <= 5; i++) {
 for (let i = 1; i <= 5; i++) {
   console.log("Case ${i} solved!");
 }
+
+//Case 4: The Case of the Conditional Clue
+
+var suspectName = "Mr.Green";
+if (suspectName === "Ms.Scarlet") {
+  console.log("Ms.Scarlet is the suspect!");
+}
+if (suspectName === "Mr.Green") {
+  console.log("Mr.Green is suspicious");
+} else {
+  ("Keep looking...");
+}
