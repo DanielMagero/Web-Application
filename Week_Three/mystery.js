@@ -16,6 +16,8 @@ function solveMystery(clue) {
 }
 
 solveMystery;
+solveMystery("obvious");
+solveMystery("not obvious");
 
 //Case 3: The Case of the Endless Loop
 for (let i = 1; i <= 5; i++) {
@@ -37,3 +39,14 @@ if (suspectName === "Mr.Green") {
 } else {
   ("Keep looking...");
 }
+
+//Bonus case
+function findClue(string) {
+  if (string.length > 0) {
+    return string[0];
+  } else {
+    return null;
+  }
+}
+
+console.log(findClue("kindred"));
