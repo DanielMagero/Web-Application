@@ -30,7 +30,9 @@ while (i <= 5) {
   i++;
 }
 */
-
+//allowing prompt in the terminal
+//npm install prompt-sync
+const prompt = require("prompt-sync")({ sigint: true });
 let answer = 0;
 while (answer !== "yes") {
   answer = prompt("Do you want to continue? (yes/no)");
