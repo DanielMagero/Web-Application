@@ -21,5 +21,3 @@ function arithmetic_function(num1, num2) {
     product
   );
 }
-
-arithmetic_function(12, 32);
