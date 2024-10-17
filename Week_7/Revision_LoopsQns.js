@@ -5,4 +5,5 @@
 //Place a condition that it is always true
 //Not placing a condition
 
+//You can use a break to prevent the code from running infinitely
 //You would press the Ctrl + c or loop for the interrupt button

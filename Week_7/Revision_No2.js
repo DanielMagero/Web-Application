@@ -12,6 +12,7 @@ if (score > 90 && score <= 100) {
 //The code displays 'B grade'
 
 //change it to a switch statement
+//THe code below is wrong even if it runs???
 let score1 = 80;
 switch (true) {
   case score1 > 90 && score1 <= 100:
