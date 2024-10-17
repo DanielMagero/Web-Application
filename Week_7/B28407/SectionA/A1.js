@@ -1,0 +1,7 @@
+/* variables store data that can be updated or changed as many times as desired after
+they have been initialized.
+Constants store data that cannot be changed or updated in that entire Javascript file. 
+
+The variables are initialized with either var or let
+The constants are initialized with const
+*/
