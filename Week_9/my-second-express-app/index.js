@@ -20,6 +20,17 @@ app.get("/list-of-friends", (request, response) => {
   return response.send(friends);
 });
 
+app.get("/list-of-friends/:friendid", (request, response) => {
+  console.log("The value is: ", request.params.friendid);
+  for (let i = 0; i < 5; i++) {
+    if (request.params.friendid == friends[i].id) {
+      return response.send(friends[i]);
+    }
+    console.log(friends[[i]]);
+  }
+  return response.send("Not found");
+});
+
 let students = [
   { id: 1, AccessNo: "B24536", StudentName: "Tracy" },
   { id: 2, AccessNo: "B24536", StudentName: "Anitah" },
