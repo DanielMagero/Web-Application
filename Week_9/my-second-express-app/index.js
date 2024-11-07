@@ -1,12 +1,24 @@
 const express = require("express");
+const myBusinessLogic = require("./service/my_business_logic");
+
 const app = express();
 const port = 5000;
+app.use(express.json());
 
 //GET
 //this helps create endpoints that receive requests
 app.get("/greetings", (request, response) => {
   return response.send({ msg: "Hello Daniel!" });
 });
+
+//List of friends
+let friends = [
+  { id: 1, name: "Tracy" },
+  { id: 2, name: "Humble" },
+  { id: 3, name: "Esther" },
+  { id: 4, name: "Justin" },
+  { id: 5, name: "Anitah" },
+];
 
 app.get("/list-of-friends", (request, response) => {
   return response.send(friends);
@@ -23,33 +35,40 @@ app.get("/list-of-friends/:friendid", (request, response) => {
   return response.send("Not found");
 });
 
-let students = [
-  { id: 1, AccessNo: "B24536", StudentName: "Tracy" },
-  { id: 2, AccessNo: "B24536", StudentName: "Anitah" },
-  { id: 3, AccessNo: "B28490", StudentName: "Joy" },
-  { id: 4, AccessNo: "B24536", StudentName: "Esther" },
-  { id: 5, AccessNo: "B24536", StudentName: "Justin" },
-  { id: 6, AccessNo: "B24536", StudentName: "Cynthia" },
-  { id: 7, AccessNo: "B24536", StudentName: "Elijah" },
-  { id: 8, AccessNo: "B24536", StudentName: "Humble" },
-  { id: 9, AccessNo: "B24536", StudentName: "Emmanuel" },
-  { id: 10, AccessNo: "B24536", StudentName: "Cathy" },
-];
-
+//Using the models and services
 app.get("/class-list", (request, response) => {
-  return response.send(students);
+  return response.send(myBusinessLogic.getStudents());
 });
 
-app.get("/class-list-id/:id", (request, response) => {
-  console.log("Loging request params", request.params);
-  console.log("Use the value from front-end", request.params.id);
-  for (i = 0; i < 10; i++) {
-    if (request.params.id == students[i].id) {
-      return response.status(200).send(students[i]);
-    }
-    console.log(students[[i]]);
-  }
-  return response.status(400).send("Found Nothing");
+app.get("/class-list-id/:studentId", (request, response) => {
+  //console.log("Loging request params", request.params);
+  //console.log("Use the value from front-end", request.params.id);
+
+  return response.status(200).send(myBusinessLogic.getStudentsById(request));
+});
+
+//post
+app.post("/signup", (request, response) => {
+  console.log("Loging request body", request.body);
+  return response.status(200).send("Hey, we are using post");
+});
+
+//delete
+app.post("/deletestudent", (request, response) => {
+  console.log("Loging request body for delete", request.body);
+  return response.status(200).send("Hey, we are using post for delete");
+});
+
+//patch
+app.post("/patch-students", (request, response) => {
+  console.log("Loging request body for patch", request.body);
+  return response.status(200).send("Hey, we are using post for patch");
+});
+
+//put
+app.post("/put-student", (request, response) => {
+  console.log("Loging request body for put", request.body);
+  return response.status(200).send("Hey, we are using post for put");
 });
 
 app.listen(port, () => {
