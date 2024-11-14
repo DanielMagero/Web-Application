@@ -54,19 +54,19 @@ app.post("/signup", (request, response) => {
 });
 
 //delete
-app.post("/deletestudent", (request, response) => {
+app.delete("/deletestudent", (request, response) => {
   console.log("Loging request body for delete", request.body);
   return response.status(200).send("Hey, we are using post for delete");
 });
 
 //patch
-app.post("/patch-students", (request, response) => {
+app.patch("/patch-students", (request, response) => {
   console.log("Loging request body for patch", request.body);
   return response.status(200).send("Hey, we are using post for patch");
 });
 
 //put
-app.post("/put-student", (request, response) => {
+app.put("/put-student", (request, response) => {
   console.log("Loging request body for put", request.body);
   return response.status(200).send("Hey, we are using post for put");
 });
