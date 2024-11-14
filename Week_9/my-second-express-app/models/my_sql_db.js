@@ -7,9 +7,14 @@ const connection = sql.createConnection({
   database: "try_me",
 });
 
-connection.connect((error) => {
+connection.connect();
+
+connection.query("select", (error, rows, fields) => {
   if (error) {
     console.log("An error has occurred while connecting to database");
     throw error;
   }
+  console.log("Solution", rows[0].solution);
 });
+
+connection.end();
